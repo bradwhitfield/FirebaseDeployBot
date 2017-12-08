@@ -23,16 +23,18 @@ if [ "$1" = 'buildsite' ]; then
   fi
   cd hugo-site
 
-  # TODO: Add git submodule logic.
+  echo "Grabbing the theme as a git submodule."
+  git submodule init
+  git submodule update
 
   echo "Building hugo site."
   hugo
 
   echo "Uploading to Firebase."
   if [[ -z "${FIREBASE_PROJECT}" ]]; then
-    firebase deploy --token $FIREBASE_DEPLOY_TOKEN --project $FIREBASE_PROJECT
+    exec firebase deploy --token $FIREBASE_DEPLOY_TOKEN --project $FIREBASE_PROJECT
   else
-    firebase deploy --token $FIREBASE_DEPLOY_TOKEN
+    exec firebase deploy --token $FIREBASE_DEPLOY_TOKEN
   fi
 fi
 
