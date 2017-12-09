@@ -1,0 +1,6 @@
+steps:
+- name: bradwhitfield/firebasedeploybot
+  env:
+  - 'FIREBASE_DEPLOY_TOKEN=$_FIREBASE_DEPLOY_TOKEN'
+  - 'FIREBASE_PROJECT=$_FIREBASE_PROJECT'
+  - 'GIT_REPO=$_GIT_REPO'
