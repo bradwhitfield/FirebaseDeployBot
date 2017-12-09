@@ -14,13 +14,13 @@ type response struct {
 func F(w http.ResponseWriter, r *http.Request) {
 	d, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		w.WriterHeader(500)
+		w.WriteHeader(500)
 		log.Panic(err)
 		return
 	}
 
 	if err := json.NewEncoder(w).Encode(response{Message: string(d)}); err != nil {
-		w.WriterHeader(500)
+		w.WriteHeader(500)
 		return
 	}
 }
