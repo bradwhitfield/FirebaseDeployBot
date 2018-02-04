@@ -1,7 +1,7 @@
 {
-  "body": "Go Serverless!",
+  "body": "{\"project-id\": \"project-id\",\"git-url\": \"https://github.com/username/awesome-hugo-site.git\",\"token\": \"firebasecitoken\"}",
   "header": {"agent": "Go"},
-  "method": "GET",
+  "method": "POST",
   "remote_addr": "127.0.0.1",
   "url": "http://127.0.0.1:80"
 }
